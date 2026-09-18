@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Buttons</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h1>Sound Buttons</h1>
+    <p class="subtitle">Tap one. It loops. Tap Stop to end it.</p>
+
+    <div class="sound-block">
+      <button class="play-btn sound-1" data-sound="1" data-name="Sound 1">
+        <span class="emoji">🐸</span>
+        <span class="label">
+          <span class="name">Croak Attack</span>
+          <span class="desc">This is for when things get ribbit-ing</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="sound-block">
+      <button class="play-btn sound-2" data-sound="2" data-name="Sound 2">
+        <span class="emoji">🚨</span>
+        <span class="label">
+          <span class="name">Alarm Panic</span>
+          <span class="desc">This is for maximum chaos energy</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="sound-block">
+      <button class="play-btn sound-3" data-sound="3" data-name="Sound 3">
+        <span class="emoji">🎉</span>
+        <span class="label">
+          <span class="name">Confetti Cannon</span>
+          <span class="desc">This is for celebrating literally anything</span>
+        </span>
+      </button>
+    </div>
+
+    <button id="stop-btn">⏹ Stop</button>
+
+    <p id="status">Nothing playing</p>
+  </div>
+
+  <audio id="audio1" src="sounds/sound1.mp3" loop></audio>
+  <audio id="audio2" src="sounds/sound2.mp3" loop></audio>
+  <audio id="audio3" src="sounds/sound3.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

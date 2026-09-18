@@ -1,0 +1,132 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 16px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 28px 20px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
+
+h1 {
+  margin: 0 0 4px;
+  color: #2d2d2d;
+  font-size: 26px;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: #777;
+  font-size: 14px;
+}
+
+.sound-block {
+  margin-bottom: 14px;
+}
+
+.play-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+.play-btn .emoji {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.play-btn .label {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.play-btn .name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.play-btn .desc {
+  font-size: 12px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* Per-sound colors */
+.sound-1 { background: linear-gradient(135deg, #43cea2, #185a9d); }
+.sound-2 { background: linear-gradient(135deg, #ff512f, #dd2476); }
+.sound-3 { background: linear-gradient(135deg, #f7971e, #ffd200); color: #3a2a00; }
+
+.play-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) inset;
+}
+
+/* Highlight whichever button is currently playing */
+.play-btn.playing {
+  outline: 3px solid #333;
+  outline-offset: 2px;
+}
+
+#stop-btn {
+  width: 100%;
+  margin-top: 6px;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.15s ease;
+}
+
+#stop-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) inset;
+}
+
+#status {
+  margin: 16px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  min-height: 20px;
+}
+
+/* Extra breathing room on small phones */
+@media (max-width: 380px) {
+  .card {
+    padding: 22px 14px;
+  }
+  .play-btn .name {
+    font-size: 15px;
+  }
+  .play-btn .desc {
+    font-size: 11px;
+  }
+}
