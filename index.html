@@ -8,12 +8,15 @@
 </head>
 <body>
 
+  <!-- Ghost stop button — fixed to top-left corner, nearly invisible -->
+  <button id="stop-btn" aria-label="stop"></button>
+
   <div class="card">
     <h1>Sound Buttons</h1>
-    <p class="subtitle">Tap one. It loops. Tap Stop to end it.</p>
+    <p class="subtitle">Tap a button. It loops. It's loud.</p>
 
     <div class="sound-block">
-      <button class="play-btn sound-1" data-sound="1" data-name="Sound 1">
+      <button class="play-btn sound-1" data-sound="1" data-name="Croak Attack">
         <span class="emoji">🐸</span>
         <span class="label">
           <span class="name">Croak Attack</span>
@@ -23,7 +26,7 @@
     </div>
 
     <div class="sound-block">
-      <button class="play-btn sound-2" data-sound="2" data-name="Sound 2">
+      <button class="play-btn sound-2" data-sound="2" data-name="Alarm Panic">
         <span class="emoji">🚨</span>
         <span class="label">
           <span class="name">Alarm Panic</span>
@@ -33,7 +36,7 @@
     </div>
 
     <div class="sound-block">
-      <button class="play-btn sound-3" data-sound="3" data-name="Sound 3">
+      <button class="play-btn sound-3" data-sound="3" data-name="Confetti Cannon">
         <span class="emoji">🎉</span>
         <span class="label">
           <span class="name">Confetti Cannon</span>
@@ -41,8 +44,6 @@
         </span>
       </button>
     </div>
-
-    <button id="stop-btn">⏹ Stop</button>
 
     <p id="status">Nothing playing</p>
   </div>
