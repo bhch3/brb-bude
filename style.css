@@ -13,6 +13,28 @@ body {
   padding: 16px;
 }
 
+/* ── Ghost stop button ─────────────────────────────────────
+   Fixed to top-left corner. 14×14px. Near-transparent.
+   No label, no background. Blends into the gradient.
+   Only the prankster knows to tap here.
+───────────────────────────────────────────────────────── */
+#stop-btn {
+  position: fixed;
+  top: 4px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0.12;
+  cursor: default;
+  z-index: 9999;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ── Card ───────────────────────────────────────────────── */
 .card {
   background: rgba(255, 255, 255, 0.97);
   border-radius: 16px;
@@ -39,6 +61,7 @@ h1 {
   margin-bottom: 14px;
 }
 
+/* ── Play buttons ───────────────────────────────────────── */
 .play-btn {
   width: 100%;
   display: flex;
@@ -51,6 +74,7 @@ h1 {
   cursor: pointer;
   text-align: left;
   transition: transform 0.1s ease, box-shadow 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .play-btn .emoji {
@@ -80,48 +104,38 @@ h1 {
 .sound-2 { background: linear-gradient(135deg, #ff512f, #dd2476); }
 .sound-3 { background: linear-gradient(135deg, #f7971e, #ffd200); color: #3a2a00; }
 
+/* Satisfying press feedback */
 .play-btn:active {
   transform: scale(0.97);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) inset;
 }
 
-/* Highlight whichever button is currently playing */
+/* Highlight the currently playing button */
 .play-btn.playing {
-  outline: 3px solid #333;
+  outline: 3px solid #222;
   outline-offset: 2px;
 }
 
-#stop-btn {
-  width: 100%;
-  margin-top: 6px;
-  padding: 14px;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #ff4d4d;
-  color: white;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: transform 0.1s ease, box-shadow 0.15s ease;
-}
-
-#stop-btn:active {
-  transform: scale(0.97);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) inset;
-}
-
+/* ── Status line ────────────────────────────────────────── */
 #status {
-  margin: 16px 0 0;
+  margin: 18px 0 0;
   font-size: 14px;
   font-weight: 600;
   color: #444;
   min-height: 20px;
 }
 
-/* Extra breathing room on small phones */
+/* ── Small phones (<380px) ──────────────────────────────── */
 @media (max-width: 380px) {
   .card {
     padding: 22px 14px;
+  }
+  .play-btn {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+  .play-btn .emoji {
+    font-size: 24px;
   }
   .play-btn .name {
     font-size: 15px;
